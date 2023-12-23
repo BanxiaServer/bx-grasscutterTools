@@ -57,9 +57,9 @@ const LoginHS = ref(true)
               <nav class="text-sm font-semibold leading-6 text-slate-700 dark:text-slate-200">
                 <ul class="flex space-x-8">
                   <li>
-                    <a href="https://www.grasscutter.cf/" target="_bank"
+                    <a href="http://bxgov.cn:21480/" target="_bank"
                       class="block ml-6 text-slate-400 hover:text-slate-500 dark:hover:text-slate-300">
-                      Grasscutter-docs-zh_CN
+                      用户后台
                     </a>
                   </li>
                   <li v-if="LoginHS">
