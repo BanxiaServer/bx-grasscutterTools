@@ -46,7 +46,8 @@ const send: any = inject("send")
 
     <div class="commuse-item">
       <div class="text-slate-900 dark:text-slate-100"> 物品: </div>
-      <a-select allow-search v-model="value2" :options="options" placeholder="请输入物品" filterable />
+      <a-cascader allow-search v-model="value2" :options="options" placeholder="请输入物品" filterable />
+
     </div>
 
     <div class="commuse-item">

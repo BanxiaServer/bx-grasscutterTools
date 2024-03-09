@@ -1,5 +1,18 @@
 [
   {
+    "label": "示例",
+    "value": 456,
+    "children": [
+        {
+          "label": "5星|空之杯:迷误者之灯",
+          "value": 20514
+        }
+    ]
+  },
+
+
+  
+  {
       "label": "深林的记忆",
       "value": 20,
       "children": [
