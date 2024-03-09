@@ -7,7 +7,7 @@
 # web版
 ## 安装依赖
 `
-npm install
+yarn
 `
 
 ## 开发
