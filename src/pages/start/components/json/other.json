@@ -1,0 +1,127 @@
+
+[
+  {
+    "label": "加速*3倍",
+    "value": "/w time3"
+  },
+  {
+    "label": "点亮地图",
+    "value": "/prop unlockmap 1"
+  },
+  {
+    "label": "解锁所有状态",
+    "value": "/unlockall"
+  },
+  {
+    "label": "获取全部物品",
+    "value": "/give all x9999 lv90 c6 r5 sl10"
+  },
+  {
+    "label": "解锁风之翼",
+    "value": "/prop fly on"
+  },
+  {
+    "label": "无敌",
+    "value": "/prop god on"
+  },
+  {
+    "label": "无限体力",
+    "value": "/prop ns on"
+  },
+  {
+    "label": "无限能量",
+    "value": "/prop ue on"
+  },
+  {
+    "label": "冒险等级升60级",
+    "value": "/give 102 x1880200"
+  },
+  {
+    "label": "尘歌壶信任值升10级",
+    "value": "/give 121 x10900"
+  },
+  {
+    "label": "无cd",
+    "value": "/setstats cdr 100%"
+  },
+  {
+    "label": "满血",
+    "value": "/h"
+  },
+  {
+    "label": "设置纪行等级",
+    "value": "/prop bp 50"
+  },
+  {
+    "label": "设置好感度10",
+    "value": "/setfetterlevel 10"
+  },
+  {
+    "label": "世界等级8",
+    "value": "/prop wl 8"
+  },
+  {
+    "label": "全队充能",
+    "value": "/spawn 2008 25"
+  },
+  {
+    "label": "查看坐标",
+    "value": "/pos"
+  },
+  {
+    "label": "一万相遇",
+    "value": "/give 224 x10000"
+  },
+  {
+    "label": "一万纠缠",
+    "value": "/give 223 x10000"
+  },
+  {
+    "label": "十万原石",
+    "value": "/give 201 x100000"
+  },
+  {
+    "label": "一亿摩拉",
+    "value": "/give 202 x100000000"
+  },
+  {
+    "label": "全皮肤",
+    "value": "/give 340000|/give 340001|/give 340002|/give 340003|/give 340004|/give 340005|/give 340006|/give 340007|/give 340008|/give 340009|/give 340010|/give 340011|/give 340012|/give 340013"
+  },
+  {
+    "label": "清空圣遗物",
+    "value": "/clear art lv20 5*"
+  },
+  {
+    "label": "清空材料",
+    "value": "/clear mat"
+  },
+  {
+    "label": "击杀全部怪物",
+    "value": "/killall"
+  },
+  {
+    "label": "自杀",
+    "value": "/kill 0"
+  },
+  {
+    "label": "快速重进游戏",
+    "value": "/kick"
+  },
+  {
+    "label": "清空角色命座(需重登)",
+    "value": "/resetconst"
+  },
+  {
+    "label": "进入多人游戏状态",
+    "value": "/coop"
+  },
+  {
+    "label": "[多人游戏]全体传送",
+    "value": "/tpall"
+  },
+  {
+    "label": "起飞",
+    "value": "/tp ~ ~100 ~"
+  }
+]

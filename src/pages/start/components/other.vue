@@ -3,10 +3,10 @@
 import { reactive, ref, computed } from 'vue'
 import { useClipboard } from '@vueuse/core'
 import { Message } from '@arco-design/web-vue'
-import { useAppStore } from '@/store/modules/app'
+
+import other from './json/other.json'
 
 const { text, isSupported, copy } = useClipboard()
-const appStore = useAppStore()
 
 const options = reactive([
   {
@@ -96,26 +96,26 @@ const options = reactive([
 ])
 const message = Message
 
-function copyvalue(value: string) {
-  copy(value)
+function copyvalue() {
+  copy(value.value)
   if (isSupported) {
-    message.success(`已复制${value}`)
+    message.success(`已复制${value.value}`)
   }
 }
-const send: any = inject("send")
 </script>
 
 <template>
   <div class="commuse">
-    <div v-for="(item, index) in options" :key="index">
-      <div class="text-slate-900 dark:text-slate-100">{{ item.title }}</div>
-      <div>
-        <a-input v-model="item.value" placeholder="" disabled />
-      </div>
-      <div>
-        <a-button type="outline" @click="copyvalue(item.value)">复制</a-button>
-        <a-button type="outline" v-if="appStore.isLogin" @click="send(item.value)">执行</a-button>
-      </div>
+    <div class="title"> 常用指令 </div>
+    <div class="commuse-item">
+      <div class="text-slate-900 dark:text-slate-100"> 选择指令: </div>
+      <a-cascader allow-search v-model="value2" :options="options" placeholder="" filterable />
+    </div>
+
+    <div class="generate">
+      <a-input v-model="value" placeholder="" />
+      <a-button type="outline" @click="copyvalue">复制</a-button>
+      <!-- <a-button type="outline" @click="copyvalue">执行</a-button> -->
     </div>
   </div>
 </template>
@@ -123,19 +123,25 @@ const send: any = inject("send")
 .commuse {
   width: 500px;
   margin: auto;
+}
 
-  >div {
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    color: #000;
+.title {
+  text-align: center;
+  font-size: 16px;
+  margin: 10px 0;
+}
 
-    >div {
-      &:nth-child(1) {
-        width: 130px;
-      }
+.commuse-item {
+  display: flex;
+  align-items: center;
+  color: #000;
+  margin: 18px 0;
 
-      margin: 0 5px;
+  > div {
+    &:nth-child(1) {
+      width: 150px;
+      text-align: right;
+      padding-right: 10px;
     }
   }
 }
