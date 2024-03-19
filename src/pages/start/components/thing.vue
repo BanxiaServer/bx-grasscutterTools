@@ -8,9 +8,9 @@ import { Message } from '@arco-design/web-vue'
 const { text, isSupported, copy } = useClipboard()
 const appStore = useAppStore()
 
-var value2 = ref()
+var value2 = ref(101)
 var value3 = ref('/give')
-var num = ref()
+var num = ref(666)
 
 const value = computed(() => {
   return `${value3.value} ${value2.value} x${num.value}`

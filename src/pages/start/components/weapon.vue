@@ -44,7 +44,7 @@ const appStore = useAppStore()
 
 const value2 = ref(23013)
 const num = ref(1)
-const grade = ref(80)
+const grade = ref(90)
 const refined = ref(5)
 
 const value = computed(() => {

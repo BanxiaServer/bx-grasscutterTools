@@ -33,6 +33,10 @@
     "value": "/prop ue on"
   },
   {
+    "label": "前台角色90级",
+    "value": "/lv 90"
+  },
+  {
     "label": "冒险等级升60级",
     "value": "/give 102 x1880200"
   },

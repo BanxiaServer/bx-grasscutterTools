@@ -14,7 +14,7 @@ const appStore = useAppStore()
 var holyrelicnamevalue = ref('')
 var holyrelicnmainvalue = ref('')
 
-var grade = ref(0)
+var grade = ref(20)
 var selectedValue = ref()
 var num = ref()
 
