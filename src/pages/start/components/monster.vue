@@ -9,6 +9,10 @@ import monster from './json/monster.json'
 const { text, isSupported, copy } = useClipboard()
 const appStore = useAppStore()
 
+function customLabel({ labels }: any) {
+  return labels.join(' / ').length > 5 ? labels.join(' / ').slice(0, 5) + '...' : labels.join(' / ');
+}
+
 var value2 = ref(21010101)
 var num = ref(-1)
 var grade = ref(-1)
@@ -50,13 +54,13 @@ function copyvalue() {
 }
 const send: any = inject("send")
 </script>
-
 <template>
   <div class="commuse">
     <div class="commuse-item">
       <div class="text-slate-900 dark:text-slate-100"> 怪物: </div>
       <a-cascader allow-search v-model="value2" :options="options" placeholder="" filterable />
     </div>
+
     <div class="commuse-item">
       <div class="text-slate-900 dark:text-slate-100"> 数量: </div>
       <a-input-number v-model="num" placeholder="请输入数量" mode="button" size="large" class="input-demo" />
@@ -90,29 +94,57 @@ const send: any = inject("send")
   </div>
 </template>
 <style lang="less" scoped>
+/* 添加样式以美化滚动公告 */
+.scrolling-notice {
+  color: #BEBEBE;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 10px;
+  /* 添加圆角样式 */
+}
+
 .commuse {
-  width: 500px;
+  width: 100%; // 使用百分比宽度，使其自适应
   margin: auto;
+  padding: 0 10px; // 添加内边距，确保在小屏幕上也有足够的间距
+
+  @media (max-width: 768px) {
+    // 当屏幕宽度小于768px时
+    flex-direction: column; // 改为垂直方向排列
+    align-items: flex-start; // 对齐到左侧
+  }
 }
 
 .commuse-item {
   display: flex;
-  align-items: center;
+  flex-direction: column; // 垂直排列
+  align-items: center; // 居中对齐
   color: #000;
-  margin: 18px 0;
+  margin: 20px 0; // 增加上下间距
+}
 
-  >div {
-    &:nth-child(1) {
-      width: 150px;
-      text-align: right;
-      padding-right: 10px;
-    }
-  }
+.label {
+  width: 100%; // 标签占据全部宽度
+  padding-bottom: 5px; // 下方添加一些间距
+}
+
+.input {
+  width: 100%; // 输入框占据全部宽度
 }
 
 .generate {
   display: flex;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 0; // 移除左边距
+  justify-content: space-between; // 均匀分布按钮和输入框
+
+  @media (max-width: 768px) {
+    // 在小屏幕上改为垂直排列
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>

@@ -94,6 +94,7 @@ const send: any = inject("send")
     </div>
   </div>
 </template>
+
 <style lang="less" scoped>
 .commuse {
   width: 500px;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, ref, onMounted, watch } from 'vue'
 import {
   IconMenuFold,
   IconMenuUnfold,
@@ -9,7 +9,8 @@ import {
 } from '@arco-design/web-vue/es/icon';
 import router from "@/router/index"
 import { useAppStore } from '@/store'
-import { throwStatement } from '@babel/types';
+import { Message } from '@arco-design/web-vue';
+
 const appStore = useAppStore()
 const datav = reactive([
   { name: '快捷指令', path: "/start/other" },
@@ -21,20 +22,7 @@ const datav = reactive([
   { name: '角色属性', path: "/start/role" },
 ])
 
-const datav2 = reactive([
-  { name: 'WSS连接', path: "/start/wss" },
-  { name: '控制台', path: "/start/consoled" },
-  { name: '在线人员', path: "/start/personnel" },
-])
-
-const datav3 = reactive([
-  { name: 'Tocken', path: "/start/login" },
-  { name: '注册', path: "/start/register" },
-  { name: '改密', path: "/start/changepassword" },
-])
-
 const GMTitle = ref("GM控制面板")
-
 
 function topath(path: string) {
   router.push({ path: path })
@@ -68,45 +56,47 @@ watch(
   { immediate: true }
 )
 </script>
+
 <template>
-  <div class="nav ">
-    <a-menu showCollapseButton :default-open-keys="['0', '1', '2']" :selected-keys="selectedKey">
+  <div class="nav">
+    <a-menu
+      mode="horizontal"
+      showCollapseButton
+      :default-open-keys="['0']"
+      :selected-keys="selectedKey"
+    >
       <a-sub-menu key="0">
         <template #icon>
           <IconApps></IconApps>
         </template>
-        <template #title>指令生成 </template>
+        <template #title>指令生成</template>
         <a-menu-item v-for="(item, index) in datav" :key="item.path" @click="topath(item.path)">
-          {{ item.name }}
-        </a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="1">
-        <template #icon>
-          <IconBug></IconBug>
-        </template>
-        <template #title>废弃</template>
-        <a-menu-item v-for="(item, index) in datav2" :key="item.path" @click="topath(item.path)">
-          {{ item.name }}
-        </a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="2">
-        <template #icon>
-          <IconApps></IconApps>
-        </template>
-        <template #title>废弃</template>
-        <a-menu-item v-for="(item, index) in datav3" :key="item.path" @click="topath(item.path)">
           {{ item.name }}
         </a-menu-item>
       </a-sub-menu>
     </a-menu>
   </div>
 </template>
+
 <style lang="less" scoped>
 .nav {
-  height: calc(100vh - 57px);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 将 justify-content 设置为 center 来居中对齐 */
+  height: 57px;
+}
 
-  >div {
-    height: 100%;
-  }
+.nav > div {
+  display: flex;
+  justify-content: center; /* 确保内部内容也居中对齐 */
+  width: 100%;
 }
 </style>
